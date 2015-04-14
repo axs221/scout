@@ -32,6 +32,7 @@ class ViewManager(object):
         palette = [('header', 'black', 'dark green', 'standout'),
                    ('normal', 'white', 'black'),
                    ('reveal focus', 'white', 'dark blue', 'standout'),
+                   ('filename', 'light blue', 'black'),
                    ('diff', 'black', 'dark green', 'standout'),
                    ('added', 'dark green', 'black'),
                    ('deleted', 'dark red', 'black')]

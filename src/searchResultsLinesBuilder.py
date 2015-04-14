@@ -5,26 +5,50 @@ import re
 class SearchResultsLinesBuilder(object):
     def __init__(self):
         self.lines = []
-        self.current_commit = ''
+        self.current_filename = ''
 
     def add_line(self, text):
-        self.parse_line(text)
-        decorated = self.decorate(text)
-        decorated.commit = self.current_commit
-        self.lines.append(decorated)
+        if self.filter_out(text):
+            return
+
+        self.parse_text(text)
+        line = self.format_line(text)
+        self.decorate_and_append(line)
+
         return self
 
-    def parse_line(self, text):
-        commit_match = re.match('^commit\s+(\w+)', text)
-        if commit_match:
-            self.current_commit = commit_match.group(1)
+    def decorate_and_append(self, line, decoration='normal'):
+        decorated = self.decorate(line, decoration)
+        decorated.filename = self.current_filename
+        self.lines.append(decorated)
+
+    def filter_out(self, text):
+        if 'Binary' in text:
+            return True
+        return False
+
+    def parse_text(self, text):
+        filename_match = re.match('^([a-zA-Z_\/.]+):', text)
+        if filename_match:
+            this_filename = filename_match.group(1)
+            if this_filename != self.current_filename:
+                self.decorate_and_append("")
+                self.decorate_and_append(this_filename, 'filename')
+                self.current_filename = filename_match.group(1)
+
+    def format_line(self, text):
+        filecontents_match = re.match('^[a-zA-Z_\/.]+:\s*(.*)$', text)
+        if filecontents_match:
+            return filecontents_match.group(1)
+        return text
+        # return 'foo'
 
     def build(self):
         lines = self.lines
         self.lines = []
         return lines
 
-    def decorate(self, text):
+    def decorate(self, text, decoration='normal'):
         line = urwid.Text(text)
         new_map = lambda attr: urwid.AttrMap(line, attr, 'reveal focus')
-        return new_map('normal')
+        return new_map(decoration)

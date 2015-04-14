@@ -1,4 +1,5 @@
 #!/usr/bin/python
+import os
 import urwid
 import subprocess
 from baseView import BaseView
@@ -24,7 +25,7 @@ class SearchResultsView(BaseView):
     def get(self):
         filename = self.parameters_manager.filename  # Note that filename may be empty
         searchResults = subprocess.Popen(
-            "grep 'search' . -R"
+            "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
             , shell=True, stdout=subprocess.PIPE).stdout.read()
         lines = searchResults.split('\n')
         builder = SearchResultsLinesBuilder()
