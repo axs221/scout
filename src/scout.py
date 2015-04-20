@@ -18,11 +18,10 @@ class Scout(object):
     def init_view_manager(self):
         self.view_manager = ViewManager()
         view = SearchResultsView(self.parameters_manager, self.view_manager)
-        view.show_key = urwid.Text("Press any key", wrap='clip')
+        # view.show_key = urwid.Text("Press any key", wrap='clip')
         self.view_manager.current_view = view
 
-        head = urwid.AttrMap(view.show_key, 'header')
-        self.view_manager.main_frame = urwid.Frame(view, head, focus_part='body')
+        self.view_manager.initialize_frame(view)
 
 if __name__ == '__main__':
     scout = Scout()

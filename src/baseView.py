@@ -6,6 +6,10 @@ class BaseView(urwid.ListBox):
     def __init__(self, parameters_manager, view_manager, content):
         self.parameters_manager = parameters_manager
         self.view_manager = view_manager
+
+        self.header = None
+        self.footer = None
+
         super(BaseView, self).__init__(content)
 
     def on_keypress(self, input):

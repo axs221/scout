@@ -9,18 +9,19 @@ class SearchResultsView(BaseView):
 
     def __init__(self, parameters_manager, view_manager):
         self.parameters_manager = parameters_manager
+        self.view_manager = view_manager
 
         searchResults = self.get()
 
         content = urwid.SimpleListWalker(searchResults)
         self.content = content
 
-        self.selected_commit = None
+        # self.selected_commit = None
 
         super(SearchResultsView, self).__init__(parameters_manager, view_manager, content)
 
     def out(self, s):
-        self.show_key.set_text(str(s))
+        self.view_manager.header.set_text(str(s))
 
     def get(self):
         filename = self.parameters_manager.filename  # Note that filename may be empty
@@ -33,39 +34,16 @@ class SearchResultsView(BaseView):
         return builder.build()
 
     def on_keypress(self, input):
-        if input == 'h':
-            self.add_to_diff(input)
-        if input == 'enter':
-            self.add_to_diff(input)
-        elif input == 'c':
-            show_key = self.view_manager.current_view.show_key
-            self.selected_commit = None
-            show_key.set_text("Press any key")
+        if input == '/':
+            self.view_manager.main_frame.focus_part = 'footer'
+        elif input == 'enter':
+            self.view_manager.main_frame.focus_part = 'body'
+            i = 0
+            for line in self.content:
+                if self.view_manager.footer.get_input() in line.original_widget.text:
+                    self.set_focus(i)
+                    break
+                i = i + 1
+            self.view_manager.footer.clear()
         else:
             super(SearchResultsView, self).on_keypress(input)
-
-    def add_to_diff(self, input):
-        if self.selected_commit or input == 'h':
-            listbox = None
-
-            if input == 'h':
-                previously_selected_commit = 'HEAD'
-                newly_selected_commit = None
-            else:
-                previously_selected_commit = self.selected_commit
-                newly_selected_commit = self.content[self.focus_position].commit
-
-            self.show_diff(previously_selected_commit, newly_selected_commit)
-        else:
-            show_key = self.view_manager.current_view.show_key
-            self.selected_commit = self.content[self.focus_position].commit
-            show_key.set_text("Press enter on another commit, or enter here again to compare to HEAD\nCommit: " + self.selected_commit)
-
-    def show_diff(self, before_commit, after_commit):
-        pass
-        # if before_commit == after_commit:
-        #     listbox = DiffView(self.parameters_manager, self.view_manager, after_commit, 'HEAD')
-        # else:
-        #     listbox = DiffView(self.parameters_manager, self.view_manager, before_commit, after_commit)
-
-        # self.view_manager.change_view(listbox)
