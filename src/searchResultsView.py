@@ -1,5 +1,4 @@
 #!/usr/bin/python
-import logging
 import os
 import urwid
 import subprocess
@@ -9,10 +8,6 @@ from searchResultsLinesBuilder import SearchResultsLinesBuilder
 class SearchResultsView(BaseView):
 
     def __init__(self, parameters_manager, view_manager):
-        LOG_FILENAME = 'logging_example.out'
-        logging.basicConfig(filename=LOG_FILENAME,
-                            level=logging.DEBUG,
-                            )
         self.parameters_manager = parameters_manager
         self.view_manager = view_manager
 
@@ -21,18 +16,14 @@ class SearchResultsView(BaseView):
         content = urwid.SimpleListWalker(searchResults)
         self.content = content
 
-        # self.selected_commit = None
-
         super(SearchResultsView, self).__init__(parameters_manager, view_manager, content)
 
     def out(self, s):
         self.view_manager.header.set_text(str(s))
 
     def get(self):
-        filename = self.parameters_manager.filename  # Note that filename may be empty
-        searchResults = subprocess.Popen(
-            "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
-            , shell=True, stdout=subprocess.PIPE).stdout.read()
+        search_term = self.parameters_manager.search_term  # Note that search_term may be empty
+        searchResults = subprocess.Popen("/bin/grep '" + search_term + "' %s -R" % os.path.dirname(os.path.realpath(__file__)), shell=True, stdout=subprocess.PIPE).stdout.read()
         lines = searchResults.split('\n')
         builder = SearchResultsLinesBuilder()
         [ builder.add_line(line) for line in lines ]
@@ -71,12 +62,9 @@ class SearchResultsView(BaseView):
             return
 
         i = starting_position
-        logging.info('Starting from: %s' % starting_position)
 
-        reversed_content = self.content[0:i+1][::-1]
+        reversed_content = reversed(self.content[0:i+1])
         for line in reversed_content:
-            logging.info('Line number: %s' % i)
-            logging.info('Line: %s' % line.original_widget.text)
             if self.view_manager.footer.get_input() in line.original_widget.text:
                 self.set_focus(i)
                 break
