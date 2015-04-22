@@ -1,0 +1,201 @@
+INFO:root:Starting from: 10
+INFO:root:Line number: 10
+INFO:root:Line: scout = Scout()
+INFO:root:Line number: 9
+INFO:root:Line: /home/shawn/dev/scout/src/scout.py
+INFO:root:Line number: 8
+INFO:root:Line: 
+INFO:root:Line number: 7
+INFO:root:Line: "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
+INFO:root:Line number: 6
+INFO:root:Line: /home/shawn/dev/scout/src/searchResultsView.py
+INFO:root:Line number: 5
+INFO:root:Line: 
+INFO:root:Line number: 4
+INFO:root:Line: __url__ = "https://github.com/axs221/scout"
+INFO:root:Line number: 3
+INFO:root:Line: __productname__ = 'scout'
+INFO:root:Line number: 2
+INFO:root:Line: /home/shawn/dev/scout/src/__init__.py
+INFO:root:Line number: 1
+INFO:root:Line: 
+INFO:root:Starting from: 10
+INFO:root:Line number: 10
+INFO:root:Line: scout = Scout()
+INFO:root:Line number: 9
+INFO:root:Line: /home/shawn/dev/scout/src/scout.py
+INFO:root:Line number: 8
+INFO:root:Line: 
+INFO:root:Line number: 7
+INFO:root:Line: "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
+INFO:root:Line number: 6
+INFO:root:Line: /home/shawn/dev/scout/src/searchResultsView.py
+INFO:root:Line number: 5
+INFO:root:Line: 
+INFO:root:Line number: 4
+INFO:root:Line: __url__ = "https://github.com/axs221/scout"
+INFO:root:Line number: 3
+INFO:root:Line: __productname__ = 'scout'
+INFO:root:Line number: 2
+INFO:root:Line: /home/shawn/dev/scout/src/__init__.py
+INFO:root:Line number: 1
+INFO:root:Line: 
+INFO:root:Starting from: 10
+INFO:root:Line number: 10
+INFO:root:Line: scout.run_app()
+INFO:root:Starting from: 9
+INFO:root:Line number: 9
+INFO:root:Line: scout = Scout()
+INFO:root:Line number: 8
+INFO:root:Line: /home/shawn/dev/scout/src/scout.py
+INFO:root:Line number: 7
+INFO:root:Line: 
+INFO:root:Line number: 6
+INFO:root:Line: "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
+INFO:root:Line number: 5
+INFO:root:Line: /home/shawn/dev/scout/src/searchResultsView.py
+INFO:root:Line number: 4
+INFO:root:Line: 
+INFO:root:Line number: 3
+INFO:root:Line: __url__ = "https://github.com/axs221/scout"
+INFO:root:Line number: 2
+INFO:root:Line: __productname__ = 'scout'
+INFO:root:Line number: 1
+INFO:root:Line: /home/shawn/dev/scout/src/__init__.py
+INFO:root:Line number: 0
+INFO:root:Line: 
+INFO:root:Starting from: 9
+INFO:root:Line number: 9
+INFO:root:Line: scout = Scout()
+INFO:root:Line number: 8
+INFO:root:Line: /home/shawn/dev/scout/src/scout.py
+INFO:root:Line number: 7
+INFO:root:Line: 
+INFO:root:Line number: 6
+INFO:root:Line: "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
+INFO:root:Line number: 5
+INFO:root:Line: /home/shawn/dev/scout/src/searchResultsView.py
+INFO:root:Line number: 4
+INFO:root:Line: 
+INFO:root:Line number: 3
+INFO:root:Line: __url__ = "https://github.com/axs221/scout"
+INFO:root:Line number: 2
+INFO:root:Line: __productname__ = 'scout'
+INFO:root:Line number: 1
+INFO:root:Line: /home/shawn/dev/scout/src/__init__.py
+INFO:root:Line number: 0
+INFO:root:Line: 
+INFO:root:Starting from: 9
+INFO:root:Line number: 9
+INFO:root:Line: scout = Scout()
+INFO:root:Line number: 8
+INFO:root:Line: /home/shawn/dev/scout/src/scout.py
+INFO:root:Line number: 7
+INFO:root:Line: 
+INFO:root:Line number: 6
+INFO:root:Line: "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
+INFO:root:Line number: 5
+INFO:root:Line: /home/shawn/dev/scout/src/searchResultsView.py
+INFO:root:Line number: 4
+INFO:root:Line: 
+INFO:root:Line number: 3
+INFO:root:Line: __url__ = "https://github.com/axs221/scout"
+INFO:root:Line number: 2
+INFO:root:Line: __productname__ = 'scout'
+INFO:root:Line number: 1
+INFO:root:Line: /home/shawn/dev/scout/src/__init__.py
+INFO:root:Line number: 0
+INFO:root:Line: 
+INFO:root:Starting from: 9
+INFO:root:Line number: 9
+INFO:root:Line: scout = Scout()
+INFO:root:Line number: 8
+INFO:root:Line: /home/shawn/dev/scout/src/scout.py
+INFO:root:Line number: 7
+INFO:root:Line: 
+INFO:root:Line number: 6
+INFO:root:Line: "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
+INFO:root:Line number: 5
+INFO:root:Line: /home/shawn/dev/scout/src/searchResultsView.py
+INFO:root:Line number: 4
+INFO:root:Line: 
+INFO:root:Line number: 3
+INFO:root:Line: __url__ = "https://github.com/axs221/scout"
+INFO:root:Line number: 2
+INFO:root:Line: __productname__ = 'scout'
+INFO:root:Line number: 1
+INFO:root:Line: /home/shawn/dev/scout/src/__init__.py
+INFO:root:Line number: 0
+INFO:root:Line: 
+INFO:root:Starting from: 9
+INFO:root:Line number: 9
+INFO:root:Line: scout = Scout()
+INFO:root:Line number: 8
+INFO:root:Line: /home/shawn/dev/scout/src/scout.py
+INFO:root:Line number: 7
+INFO:root:Line: 
+INFO:root:Line number: 6
+INFO:root:Line: "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
+INFO:root:Line number: 5
+INFO:root:Line: /home/shawn/dev/scout/src/searchResultsView.py
+INFO:root:Line number: 4
+INFO:root:Line: 
+INFO:root:Line number: 3
+INFO:root:Line: __url__ = "https://github.com/axs221/scout"
+INFO:root:Line number: 2
+INFO:root:Line: __productname__ = 'scout'
+INFO:root:Line number: 1
+INFO:root:Line: /home/shawn/dev/scout/src/__init__.py
+INFO:root:Line number: 0
+INFO:root:Line: 
+INFO:root:Starting from: 9
+INFO:root:Line number: 9
+INFO:root:Line: scout = Scout()
+INFO:root:Line number: 8
+INFO:root:Line: /home/shawn/dev/scout/src/scout.py
+INFO:root:Line number: 7
+INFO:root:Line: 
+INFO:root:Line number: 6
+INFO:root:Line: "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
+INFO:root:Line number: 5
+INFO:root:Line: /home/shawn/dev/scout/src/searchResultsView.py
+INFO:root:Line number: 4
+INFO:root:Line: 
+INFO:root:Line number: 3
+INFO:root:Line: __url__ = "https://github.com/axs221/scout"
+INFO:root:Line number: 2
+INFO:root:Line: __productname__ = 'scout'
+INFO:root:Line number: 1
+INFO:root:Line: /home/shawn/dev/scout/src/__init__.py
+INFO:root:Line number: 0
+INFO:root:Line: 
+INFO:root:Starting from: 9
+INFO:root:Line number: 9
+INFO:root:Line: scout = Scout()
+INFO:root:Line number: 8
+INFO:root:Line: /home/shawn/dev/scout/src/scout.py
+INFO:root:Line number: 7
+INFO:root:Line: 
+INFO:root:Line number: 6
+INFO:root:Line: "/bin/grep 'scout' %s -R" % os.path.dirname(os.path.realpath(__file__))
+INFO:root:Line number: 5
+INFO:root:Line: /home/shawn/dev/scout/src/searchResultsView.py
+INFO:root:Line number: 4
+INFO:root:Line: 
+INFO:root:Line number: 3
+INFO:root:Line: __url__ = "https://github.com/axs221/scout"
+INFO:root:Line number: 2
+INFO:root:Line: __productname__ = 'scout'
+INFO:root:Line number: 1
+INFO:root:Line: /home/shawn/dev/scout/src/__init__.py
+INFO:root:Line number: 0
+INFO:root:Line: 
+INFO:root:Starting from: 2
+INFO:root:Line number: 2
+INFO:root:Line: __productname__ = 'scout'
+INFO:root:Starting from: 1
+INFO:root:Line number: 1
+INFO:root:Line: /home/shawn/dev/scout/src/__init__.py
+INFO:root:Starting from: 0
+INFO:root:Line number: 0
+INFO:root:Line: 
