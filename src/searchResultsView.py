@@ -23,7 +23,9 @@ class SearchResultsView(BaseView):
 
     def get(self):
         search_term = self.parameters_manager.search_term  # Note that search_term may be empty
-        searchResults = subprocess.Popen("/bin/grep '" + search_term + "' %s -R" % os.path.dirname(os.path.realpath(__file__)), shell=True, stdout=subprocess.PIPE).stdout.read()
+        command = "/bin/grep '" + search_term + "' %s -R" % os.getcwd()
+        searchResults = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read()
+        print command
         lines = searchResults.split('\n')
         builder = SearchResultsLinesBuilder()
         [ builder.add_line(line) for line in lines ]
@@ -34,13 +36,22 @@ class SearchResultsView(BaseView):
             self.view_manager.footer.clear()
             self.view_manager.main_frame.focus_part = 'footer'
         elif input == 'enter':
-            self.start_search()
+            if self.view_manager.main_frame.focus_part == 'footer':
+                self.start_search()
+            elif self.view_manager.main_frame.focus_part == 'body':
+                self.run_editor()
         elif input == 'n':
             self.search_next(self.focus_position + 1)
         elif input == 'N':
             self.search_previous(self.focus_position - 1)
         else:
             super(SearchResultsView, self).on_keypress(input)
+
+    def run_editor(self):
+        current_filename = self.content[self.focus_position].filename
+
+        command = "vim " + current_filename
+        subprocess.call(["vim", current_filename])
 
     def start_search(self):
         self.view_manager.main_frame.focus_part = 'body'
